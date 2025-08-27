@@ -1,12 +1,19 @@
-function gets(){
-     return;
+
+const entradas = [4];
+let i = 0;
+
+function gets() {
+    const valor = entradas[i];
+    i++;
+    return valor;
 }
-function print(){
-    console.log()
+
+function print(texto) {
+   console.log(texto);
 }
 
 
-module.exports{
+module.exports = {
     gets,
     print
 }
