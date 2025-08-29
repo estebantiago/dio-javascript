@@ -28,4 +28,24 @@ const {gets, print} = require('./funcoes-auxiliares3');
 
 const salarioBruto = gets();
 const beneficioAdicional = gets();
+const aliquota1 = 5;
+const aliquota2 = 10;
+const aliquota3 = 15;
+
+
+if(salarioBruto > 0 && salarioBruto < 1100){
+   const calculoDesconto =  salarioBruto *(aliquota1 / 100);
+    let calcSalrioTransferido = salarioBruto - calculoDesconto + beneficioAdicional;
+    print(calcSalrioTransferido)
+} 
+else if(salarioBruto > 1100 && salarioBruto < 2500){
+    const calculoDesconto =  salarioBruto *(aliquota2 / 100);
+    let calcSalrioTransferido = salarioBruto - calculoDesconto + beneficioAdicional;
+    print(calcSalrioTransferido)
+} 
+else {
+   const calculoDesconto =  salarioBruto *(aliquota3 / 100);
+    let calcSalrioTransferido = salarioBruto - calculoDesconto + beneficioAdicional;
+    print(calcSalrioTransferido)
+}
 
