@@ -28,13 +28,27 @@ Faça um programa que calcule e imprima o valor a ser transferido para um funcio
 const {gets, print} = require('./func-aux4');
 
 const  salarioBruto = gets();
-const beneficios = gets();
+const valorBeneficios = gets();
+
 
 function calcularPorcentagem(salario, porcentagem){
-   const calculo = salario * (porcentagem / 100);
-    return salarioBruto - calculo + beneficios
-    
+   return salario * (porcentagem / 100);
 }
-print(calcularPorcentagem(2000,10))
+
+function pegarAliquota(salario){
+    if(salario > 0 && salario <= 1100){
+        return 5;
+    } else if (salario > 1100 && salario < 2500){
+        return 10;
+    } else {
+        return 15;
+    }
+}
+
+const aliquotaImposto = pegarAliquota(salarioBruto)
+const valorImposto = calcularPorcentagem(salarioBruto, aliquotaImposto)
+
+let valorAtransferir = salarioBruto - valorImposto + valorBeneficios;
+print(valorAtransferir)
 
 
